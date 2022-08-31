@@ -10,8 +10,36 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
-    // code that does something when the connection is first established
-    console.log(`Kyra is connected to the server`);
+    console.log(`Successfully connected to game server`);
+    conn.write("Name: KMH");
+  });
+
+  // conn.on("connect", () => {
+  //   setTimeout( () => {
+  //     conn.write();
+  //   }, 1000);
+  // });
+
+  // conn.on("connect", () => {
+  //   setTimeout( () => {
+  //     conn.write("Move: left");
+  //   }, 2000);
+  // });
+
+  // conn.on("connect", () => {
+  //   setTimeout( () => {
+  //     conn.write("Move: down");
+  //   }, 3000);
+  // });
+
+  // conn.on("connect", () => {
+  //   setTimeout( () => {
+  //     conn.write("Move: right");
+  //   }, 4000);
+  // });
+
+  conn.on("data", (message) => {
+    console.log(message);
   });
 
   return conn;
