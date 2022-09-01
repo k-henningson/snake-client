@@ -11,7 +11,7 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
-  //console.log('key pressed', key)
+  console.log('key pressed', key)
   if (key === '\u0003') {
     //console.log('trying to quit')
     process.exit();
@@ -31,6 +31,10 @@ const handleUserInput = function (key) {
 
   if (key === 'd') {
     connection.write("Move: right");
+  };
+
+  if (key === 'p') {
+    connection.write("Say: hi!");
   };
 
 };
